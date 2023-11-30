@@ -1,0 +1,33 @@
+﻿@model IEnumerable<HaberPortal.Models.News>
+@{
+    ViewData["Title"] = "Gündem";
+}
+
+<table>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @if (item.Tag == "Gündem")
+            {
+                <tr>
+                    <td>
+                        <img src="~/newsPhotos/@item.PhotoUrl" style="width:500px; height:200px">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" style="text-decoration:none; color:black;"><h4>@Html.DisplayFor(modelItem => item.Title)</h4></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <p>@Html.DisplayFor(modelItem => item.Description) <hr /></p>
+                </td>
+            </tr> }
+        }
+    </tbody>
+    </table>
+                                     
+       
+
+

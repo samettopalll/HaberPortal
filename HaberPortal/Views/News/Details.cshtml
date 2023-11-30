@@ -1,0 +1,23 @@
+﻿@model HaberPortal.Models.News
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+
+<div>
+    <dl class="row">
+        <dd class="col-sm-10">
+            <img src="~/Photos/@Model.PhotoUrl" style="width:300px; height:200px">
+        </dd> 
+        <dd class = "col-sm-10">
+            <h3>@Html.DisplayFor(model => model.Title)</h3>
+        </dd>
+        <dd class = "col-sm-10">
+            <h5>@Html.DisplayFor(model => model.Description)</h5>
+        </dd> 
+        <dd class = "col-sm-10">
+            <p>@Html.DisplayFor(model => model.Content)</p>
+        </dd>
+    </dl>
+</div>

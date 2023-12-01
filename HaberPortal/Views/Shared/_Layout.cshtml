@@ -7,41 +7,48 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HaberPortal.styles.css" asp-append-version="true" />
+    <style>
+        #trt{
+            font-family:TRT
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid" style="position:relative; top:-15px">
-                <a class="navbar-brand" asp-area="" asp-controller="News" asp-action="Scan"><img src="/adminLayoutPhotos/haberportal.png" style="height:70px; " /></a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color:#ab132b;">
+            <div class="container-fluid" >
+                <a class="navbar-brand" asp-area="" asp-controller="News" asp-action="Scan"><img src="/adminLayoutPhotos/haberportal.png" style="height:70px; margin-left:15px;" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Scan">Haberler</a>
+                    <ul class="navbar-nav flex-grow-1" id="trt">
+                        <li class="nav-item" style="margin-left:15px">
+                            <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Scan">HABERLER</a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Nation">GÜNDEM</a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Global">DÜNYA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Nation">Gündem</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Sport">SPOR</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Global">Dünya</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Economy">EKONOMİ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Sport">Spor</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Economy">Ekonomi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Politics">Siyaset</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Politics">SİYASET</a>
                         </li>
                     </ul>
                     <form asp-controller="News" asp-action="Scan" method="post">
-                        <input type="text" name="SearchString" />
-                        <input type="submit" value="Ara" />
-                    </form>
+                        <div>
+                        <input type="text" name="SearchString" placeholder="Haber Başlığı Giriniz" />
+                            <button class="btn btn-primary btn-sm" type="submit" style="float:right; margin:0px 8px 1px 8px" >Ara</button>
+                        </div>
+                    </form>           
                     <partial name="_loginPartial" />
                 </div>
             </div>

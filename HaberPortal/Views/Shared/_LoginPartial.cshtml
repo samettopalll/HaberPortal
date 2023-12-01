@@ -1,20 +1,21 @@
-﻿<ul class="navbar-nav">
+﻿
+<ul class="navbar-nav" style="font-family:TRT">
     @if (User.Identity.IsAuthenticated)
     {
 
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="UserPage">
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="UserPage">
                 <img src="~/Photos/@User.FindFirst("PhotoUrl").Value" style="width:30px" />
                 @User.FindFirst("UserName").Value
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Oturumu Kapat</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Logout">Oturumu Kapat</a>
         </li>
         @if (User.IsInRole("Admin"))
         {
             <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin Panel</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="Index">Admin Panel</a>
             </li>
         }
         
@@ -25,10 +26,10 @@
 
 
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Oturum Aç</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Login">Oturum Aç</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">Kayıt Ol</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Register">Kayıt Ol</a>
         </li>
     }
 </ul>

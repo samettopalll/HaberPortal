@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HaberPortal.styles.css" asp-append-version="true" />
-    <style>
-        #trt{
-            font-family:TRT
-        }
-    </style>
+    <link rel="stylesheet" href="~/social.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color:#ab132b;">
-            <div class="container-fluid" >
+            <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="News" asp-action="Scan"><img src="/adminLayoutPhotos/haberportal.png" style="height:70px; margin-left:15px;" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -27,10 +25,10 @@
                         <li class="nav-item" style="margin-left:15px">
                             <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Scan">HABERLER</a>
                         </li>
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Nation">GÜNDEM</a>
                         </li>
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="News" asp-action="Global">DÜNYA</a>
                         </li>
                         <li class="nav-item">
@@ -45,10 +43,10 @@
                     </ul>
                     <form asp-controller="News" asp-action="Scan" method="post">
                         <div>
-                        <input type="text" name="SearchString" placeholder="Haber Başlığı Giriniz" />
-                            <button class="btn btn-primary btn-sm" type="submit" style="float:right; margin:0px 8px 1px 8px" >Ara</button>
+                            <input type="text" name="SearchString" placeholder="Haber Başlığı Giriniz" />
+                            <button class="btn btn-primary btn-sm" type="submit" style="float:right; margin:0px 8px 1px 8px">Ara</button>
                         </div>
-                    </form>           
+                    </form>
                     <partial name="_loginPartial" />
                 </div>
             </div>
@@ -60,10 +58,42 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Haber Portalı - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="text-center">
+        <div class="container p-4 pb-0">
+            <section class="">
+                <form action="">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Haber Bültenimize Abone Olun</strong>
+                            </p>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example2" class="form-control" placeholder="E-Mail Adresinizi Giriniz" />
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-4">
+                                Abone Ol
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
         </div>
+        <div class="col-auto">
+            <p class="pt-2">
+                <strong>Bizi Sosyal Medya Hesaplarınızdan Takip Edin</strong>
+            </p>
+        </div>
+        <div>
+            <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+            <a href="https://www.x.com" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+            <a href="https://www.youtube.com" class="fa fa-youtube"></a>
+        </div>
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

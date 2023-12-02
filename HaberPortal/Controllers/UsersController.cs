@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol;
 using HaberPortal.Models;
 using HaberPortal.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HaberPortal.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UsersController : Controller
     {
         private readonly AppDbContext _context;

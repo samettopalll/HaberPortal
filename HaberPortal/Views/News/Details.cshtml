@@ -11,16 +11,32 @@
             <img src="~/newsPhotos/@Model.PhotoUrl" style="width:1000px; height:300px">
         </dd> 
         <dd class = "col-sm-10">
-            <h3>@Html.DisplayFor(model => model.Title)</h3>
+            <h1>@Html.DisplayFor(model => model.Title)</h1>
         </dd>
         <dd class = "col-sm-10">
             <h5>@Html.DisplayFor(model => model.Description)</h5>
         </dd> 
         <dd class = "col-sm-10">
-            <p>@Html.DisplayFor(model => model.Content)</p>
+            <p id="article" style="font-size:larger;">@Html.DisplayFor(model => model.Content)</p>
         </dd>
     </dl>
 </div>
-<p>Reading time:&nbsp;</p>
-<p class="has-text-info" id="readingTime">0 min read</p>
 
+<div>
+    <dl class="row">
+        <dd class="col-sm-12" style="margin-left:900px">
+            <p><span id="time"></span> dakikalık okuma süresi.</p>
+        </dd>
+    </dl>
+</div>
+
+<script>
+    function readingTime() {
+        const text = document.getElementById("article").innerText;
+        const wpm = 225;
+        const words = text.trim().split(/\s+/).length;
+        const time = Math.ceil(words / wpm);
+        document.getElementById("time").innerText = time;
+    }
+    readingTime();
+</script>

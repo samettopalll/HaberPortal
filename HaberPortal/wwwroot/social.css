@@ -1,0 +1,33 @@
+#trt {
+    font-family: TRT
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60%;
+  }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .fa:link, .fa:visited, .fa:active, .fa:visited:active {
+        color: white
+    }
+
+.fa-facebook {
+    background: #3B5998;
+}
+
+.fa-twitter {
+    background: #1DA1F2;
+}
+.fa-youtube {
+    background: red;
+}
+.fa-instagram {
+    background: purple;
+}
